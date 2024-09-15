@@ -67,3 +67,10 @@
    ```bash
    python app.py
 
+## **configurations**
+
+- **MongoDB**: Ensure that your MongoDB URI is properly set up in the .env file.
+- **Redis:**: Ensure that Redis is running locally on localhost:6379 or update the .env file with your Redis host and port.
+
+
+
