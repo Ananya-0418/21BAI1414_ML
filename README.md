@@ -41,12 +41,29 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/Trade_mark1414.git
+   git clone https://github.com/your-username/Trade_mark1414.git 
+   ```
 
-2.Navigate to the project directory:
+2. Navigate to the project directory:
   ```bash
-   cd Trade_mark1414
+   cd Trade_mark1414 
+   ```
 
-3.Create and activate a virtual environment:
+3. Create and activate a virtual environment:
   ```bash
    python -m venv venv
+```
+4. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. Set up environment variables:
+   ```bash
+   MONGO_URI=your_mongodb_uri
+   REDIS_HOST=localhost
+   REDIS_PORT=6379
+   ```
+6. Run the application:
+   ```bash
+   python app.py
+
