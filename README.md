@@ -52,7 +52,7 @@
 3. Create and activate a virtual environment:
   ```bash
    python -m venv venv
-```
+   ```
 4. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
@@ -67,10 +67,74 @@
    ```bash
    python app.py
 
-## **configurations**
+7. Dockerised Application:
+   ```bash
+   docker build -t document-retrieval-app -f Dockerfile.main .
+   docker run -p 5000:5000 document-retrieval-app
+   ```
+    
+## **Configurations**
 
 - **MongoDB**: Ensure that your MongoDB URI is properly set up in the .env file.
 - **Redis:**: Ensure that Redis is running locally on localhost:6379 or update the .env file with your Redis host and port.
 
+## **Usage**
+- Make sure the MongoDB and Redis servers are running.
+- After starting the Flask server using python app.py, the API will be available at http://localhost:5000.
+
+## **API Endpoints**
+
+### GET /health
+
+Check if the API is active.
+
+**Response:**
+```json
+{
+  "status": "API is active"
+}
+```
+### POST /search
+
+Search for documents based on a text query.
+
+**Request Body:**
+```json
+{
+  "user_id": "unique_user_id",
+  "text": "search_text",
+  "top_k": 5,
+  "threshold": 0.5
+}
+```
+**Response:**
+```json
+{
+  "inference_time": "time_in_ms",
+  "source": "cache or db",
+  "results": []
+}
+```
+
+## **Contributing**
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-branch
+   ```
+3. Make your changes and commit:
+   ```bash
+   git commit -am 'Add new feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-branch
+   ```
+5.Create a new Pull Request.
+
+## **License**
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
